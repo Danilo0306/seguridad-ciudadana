@@ -1,151 +1,190 @@
-#BACKEND
+# 🛡️ Plataforma de Seguridad Ciudadana – Los Olivos
+Sistema Web y Móvil de Monitoreo y Análisis Geoespacial
 
-#CONFIGURAR LA CONEXIÓN A LA BD:
--Ingresar a la carpeta settings.py y modificar "DATABASES" con los datos de tu base de datos en POSTGRESQL
+Plataforma integral de **Seguridad Ciudadana para el distrito de Los Olivos**, compuesta por un **sitio web** y una **aplicación móvil**, desarrollada con tecnologías modernas orientadas a la visualización geoespacial, análisis de datos y toma de decisiones estratégicas.
 
-1. **🛡️Crear BD en PostgreSQL**
-```
- BDSEGURIDAD
-```
-2. **⚡Instalar dependencias**
-   ```
-   pip install -r requirements.txt
-   ```
+El sistema permite gestionar incidencias, usuarios y alertas mediante **mapas interactivos**, **mapas de calor**, dashboards analíticos y reportes, brindando una solución tecnológica escalable y preparada para entornos institucionales o municipales.
 
-3. **Ejecutar migraciones a la BD y crear superusuario**
-   ```
-   py manage.py makemigrations 
-   py manage.py migrate
-   py manage.py createsuperuser 
-   ```
+📍 Enfoque: Seguridad Ciudadana  
+🌐 Plataforma: Web + Mobile  
+🚀 Estado: Proyecto finalizado  
 
-4. **Ejecutar el servidor**
-``` 
-py manage.py runserver
-```
+---
 
-5. **Diseño del Login**
-Primero entra cd fronted y instalar estas dependencias 
+## 🎯 Objetivo del proyecto
 
-   npm install bootstrap
-   npm install daisyui
-   npm install --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons 
-   npm install react-tsparticles
-   npm i exceljs file-saver
+- Fortalecer la gestión de la seguridad ciudadana en el distrito de Los Olivos
+- Centralizar información de incidencias y alertas
+- Visualizar zonas críticas mediante mapas y mapas de calor
+- Facilitar el análisis de datos para la toma de decisiones
+- Brindar acceso multiplataforma (web y móvil)
+- Generar reportes en formatos PDF y Excel
+- Mejorar la respuesta ante eventos de riesgo
 
-6. **Dashboard del Usuario**
+---
 
-Instalar estas dependencias para el mapa y iconos 
-   npm install react-icons
-   npm install react-leaflet leaflet
-   npm install leaflet leaflet-routing-machine react-leaflet
-   npm i leaflet.heat
+## 🧩 Arquitectura General
 
-7. **==========🌳TRABAJAR POR RAMAS(Git Bash)===============**
-```
-1️⃣Para vesualizar las ramas existentes 
-   git branch -a  
+El proyecto está compuesto por tres grandes componentes:
 
-2️⃣Para seleccionar la rama en la que quieres trabajar 
-   git checkout nombre-rama
+- **Backend**: API REST centralizada y segura
+- **Frontend Web**: Dashboard administrativo y visualización geoespacial
+- **Aplicación Móvil**: Acceso en campo con mapas, alertas y estadísticas
 
-3️⃣Descarga cambios de un repositorio remoto (Pull)
-   git pull origin nombre-rama
+La comunicación entre frontend y backend se realiza mediante **REST API**, utilizando autenticación basada en **JWT**.
 
-4️⃣Comentar cambios realizados (COMMIT)
-   git commit -m "comentario"
+---
 
-5️⃣Subir tus cambios locales (Push)
-   git push -u origin nombre-rama
-```
+## 🧰 Tecnologías utilizadas
 
-8. **==========📘 Guía: Traer main a la rama ===============**
-```
-# 1. Estás en tu rama de trabajo
-git checkout r_NombreRama
+### Backend
+- Python
+- Django
+- Django REST Framework
+- PostgreSQL
+- Autenticación con JWT
+- Arquitectura REST
+- Control de roles y permisos
 
-# 2. Descarga los cambios más recientes del remoto
-git fetch origin
+### Frontend Web
+- React
+- CSS
+- Bootstrap
+- DaisyUI
+- FontAwesome
+- React Leaflet
+- Leaflet Routing Machine
+- Mapas de calor (Leaflet Heat)
+- Dashboards estadísticos
+- Exportación de reportes (PDF y Excel)
 
-# 3. Combina los últimos cambios del main en tu rama
-git merge origin/main
+### Aplicación Móvil
+- React Native
+- Expo
+- Axios
+- React Navigation
+- Mapas interactivos
+- Geolocalización
+- Gráficos estadísticos
+- Animaciones con Lottie
 
-# 4. Si hay conflictos, resuélvelos:
-#    (a) Abre los archivos en conflicto y elige qué conservar
-#    (b) Luego:
-git add .
-git commit
+---
 
-# 5. Finalmente, sube tu rama actualizada
-git push origin r_NombreRama
-```
+## 🧭 Módulos del sistema
 
-9. **==========📘 Guía: Traer cambios de la rama al main ===============**
-```
-# 1. Ve a tu rama principal
-git checkout main
+### 🔐 Autenticación y Seguridad
+- Inicio de sesión seguro
+- Autenticación basada en JWT
+- Manejo de sesiones
+- Control de acceso por roles
+- Protección de rutas y recursos
 
-# 2. Asegúrate de tener todo actualizado
-git fetch origin
+---
 
-# 3. Actualiza tu rama main con lo más reciente del remoto
-git pull origin main
+### 🏠 Dashboard Principal
+- Resumen general de incidencias
+- Indicadores clave de seguridad
+- Estadísticas dinámicas
+- Visualización clara para análisis rápido
 
-# 4. Trae los cambios de la rama r_nombrerama
-git merge origin/r_NombreRama
+---
 
-# 5. Si hay conflictos, resuélvelos, luego:
-git add .
-git commit
-```
-10. **======== PDF y EXCEL =============**
-  npm install jspdf jspdf-autotable xlsx 
+### 🗺️ Mapas Interactivos
+- Visualización de incidencias por ubicación
+- Marcadores dinámicos
+- Filtros por tipo de evento
+- Visualización de rutas y zonas relevantes
+- Integración con mapas en tiempo real
 
-```
-```
-**=================================== APLICACIÓN MOBILE ======================================**
+---
 
-#Dependencias de expo para la creación de la carpeta mobile 
-cd mobile
-npm install -g expo-cli
+### 🔥 Mapas de Calor
+- Identificación de zonas con alta incidencia
+- Análisis de concentración de eventos
+- Apoyo a la planificación estratégica
+- Visualización clara e intuitiva
 
-#Instalar dependencias de React Native 
-cd mobile
-npm install react-native-web react-dom
-npx expo install @react-navigation/native @react-navigation/native-stack
-npx expo install react-native-screens react-native-safe-area-context
-npm install axios
+---
 
-#Runnear la aplicación
-npx expo start
- 
-#Iniciar el backend de esta manera: 
-py manage.py runserver 0.0.0.0:8000
------ingresar la letra "a" para abrir el emulador con expo---------
-a
-#Cambio de IPs
-Para ver tu IP abre tu cmd y pon ipconfig IPv4 
-Se debe cambiar las rutas en la carpeta services- mobile (api.js y auth.js y tambien en editarperfil.jsx) a tu ip local "IMPORTANTE"
+### 📊 Gestión de Incidencias
+- Registro de eventos de seguridad
+- Clasificación por categorías
+- Historial de incidencias
+- Consulta y filtrado avanzado
+- Consumo eficiente de la API REST
 
-#Para el gif
-npm i lottie-react-native
+---
 
----Dependencias ---
-npm install victory-native react-native-svg
-mapa 
-npm install react-native-maps
-npm install react-native-reanimated
-npm install react-native-chart-kit
-npm install react-native-chart-kit react-native-svg
-npx expo install react-native-svg
-npm install react-native-xlsx
-npx expo install expo-location expo-image-picker - ubicacion
-npx expo install react-native-maps - mapa
+### 📄 Reportes y Exportación
+- Generación de reportes en PDF
+- Exportación de datos en Excel
+- Tablas dinámicas
+- Información lista para análisis institucional
 
-#Dependencias para el mapa de alertas: 
-expo install react-native-maps
-npm install react-native-heatmap
+---
 
+### 📱 Aplicación Móvil
+- Acceso desde dispositivos Android e iOS
+- Visualización de mapas y alertas
+- Estadísticas en tiempo real
+- Geolocalización del usuario
+- Interfaz optimizada para uso en campo
+- Comunicación directa con la API REST
 
+---
 
-```
+## 🎨 Experiencia de Usuario
+
+- Interfaz moderna y profesional
+- Diseño responsivo
+- Navegación intuitiva
+- Componentes reutilizables
+- Optimización para rendimiento
+- Experiencia consistente entre web y móvil
+
+---
+
+## 🚀 Características destacadas
+
+- Plataforma Web + Mobile integrada
+- API REST segura y escalable
+- Autenticación y autorización con JWT
+- Mapas interactivos y mapas de calor
+- Dashboards analíticos
+- Reportes descargables
+- Geolocalización
+- Arquitectura preparada para crecimiento
+- Código modular y mantenible
+
+---
+
+## 📝 Notas Técnicas
+
+- El backend está preparado para escalar y agregar nuevos módulos
+- La aplicación móvil consume la misma API que el frontend web
+- El sistema puede adaptarse a otros distritos o ciudades
+- Diseño orientado a proyectos institucionales
+- Compatible con navegadores modernos y dispositivos móviles
+
+---
+
+## 🏛️ Caso de uso
+
+Este sistema puede ser utilizado por:
+
+- Municipalidades
+- Centros de control
+- Áreas de seguridad ciudadana
+- Instituciones públicas
+- Proyectos de smart cities
+
+---
+
+## 👨‍💻 Autor
+
+Proyecto desarrollado como **Plataforma de Seguridad Ciudadana para el distrito de Los Olivos** (Desarrollado por **Linn.codes**)
+Perú 🇵🇪
+
+---
+
+📌 *Este proyecto demuestra el uso de tecnologías modernas, visualización geoespacial y arquitectura escalable aplicada a un problema real de impacto social.*
