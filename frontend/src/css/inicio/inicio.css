@@ -1,0 +1,131 @@
+/* Contenedor principal de la página */
+.inicio-container {
+    font-family: 'Inter', Arial, sans-serif;
+    color: #0f172a;
+    background: #f6f8fb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    position: relative; /* Evita superposición de otros elementos */
+    z-index: 10;
+}
+
+/* Contenedor principal del main */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 24px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Fila superior: contenido principal + mapa */
+.top-row {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Columna principal del top-row */
+.main-column {
+    flex: 1 1 620px;
+    min-width: 300px;
+    max-width: 720px;
+}
+
+/* Columna del aside/mapa */
+.aside-column {
+    flex: 0 0 420px;
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Fila inferior: sección que ocupa todo el ancho */
+.lower-row {
+    flex: 1 1 100%;
+    width: 100%;
+}
+
+/* ========================= */
+/* RESPONSIVE MOBILE/TABLET  */
+/* ========================= */
+
+/* Cuando la pantalla es menor a 1200px, reducir gap */
+@media (max-width: 1200px) {
+    .top-row {
+        gap: 16px;
+    }
+}
+
+/* Cuando la pantalla es menor a 992px, columnas bajan a fila única */
+@media (max-width: 992px) {
+    .top-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-column, .aside-column {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* Cuando la pantalla es menor a 576px, ajustar padding y textos */
+@media (max-width: 576px) {
+    .main-container {
+        padding: 16px;
+        gap: 24px;
+    }
+
+    .top-row {
+        gap: 16px;
+    }
+
+    /* Ajuste de los títulos para móviles */
+    .main-column h1 {
+        font-size: 28px;
+        line-height: 1.1;
+    }
+
+    .section-lower h3 {
+        font-size: 18px;
+    }
+
+    .feature-card-title {
+        font-size: 16px;
+    }
+
+    .service-card-title {
+        font-size: 16px;
+    }
+}
+
+/* ========================= */
+/* MANTENER ALTURA SIMILAR DEL MAPA Y COLUMNA PRINCIPAL */
+/* ========================= */
+
+.top-row > .main-column, 
+.top-row > .aside-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-row > .main-column > * {
+    flex: 1;
+}
+
+.top-row > .aside-column > * {
+    flex: 1;
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 101a3111a2c9f9e5f3dbb57d827220a9f24a64b7

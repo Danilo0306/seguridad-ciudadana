@@ -1,0 +1,155 @@
+/* ===========================
+   Resumen Sección
+=========================== */
+.resumen-section {
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   Formulario de prueba
+=========================== */
+.resumen-form {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+}
+
+.resumen-form h4 {
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.resumen-form select,
+.resumen-form input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.2s;
+}
+
+.resumen-form select:focus,
+.resumen-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.4);
+}
+
+.resumen-form button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.resumen-form button:hover {
+  background-color: #1e40af;
+}
+
+/* ===========================
+   Contenedor de tarjetas
+=========================== */
+.resumen-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ===========================
+   Tarjetas de gráficos
+=========================== */
+.resumen-card {
+  background-color: #ffffff;
+  flex: 1 1 300px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.resumen-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.resumen-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #1e293b;
+}
+
+/* ===========================
+   Gráficos responsive
+=========================== */
+.responsive-container {
+  width: 100%;
+  height: 250px;
+}
+
+/* ===========================
+   Mensajes de error o carga
+=========================== */
+.resumen-section p {
+  color: #ff4d4f;
+  font-weight: 500;
+}
+
+/* ========================= */
+/* RESPONSIVE MOBILE/TABLET  */
+/* ========================= */
+
+/* Cuando la pantalla es menor a 1200px*/
+@media (max-width: 1200px) {
+  .resumen-section{
+    padding: 0px;
+  }
+  
+  /*h3 de resumen*/
+  .resumen-card h3 {
+    font-size: 14px;
+  }
+}
+
+/* Cuando la pantalla es menor a 992px*/
+@media (max-width: 992px) {
+  .resumen-section{
+    padding: 0px;
+  }
+  
+  /*h3 de resumen*/
+  .resumen-card h3 {
+    font-size: 14px;
+  }
+}
+
+/* Cuando la pantalla es menor a 576px*/
+@media (max-width: 576px) {
+  .resumen-section{
+    padding: 0px;
+  }
+  
+  /*h3 de resumen*/
+  .resumen-card h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .resumen-section{
+    padding: 0px;
+  }
+  
+  /*h3 de resumen*/
+  .resumen-card h3 {
+    font-size: 14px;
+  }
+  
+}

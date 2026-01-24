@@ -1,0 +1,288 @@
+:root {
+  --footer-bg: #052b3d;
+  /* tono azul oscuro base */
+  --footer-bg-2: #042833;
+  /* gradiente sutil */
+  --muted: rgba(255, 255, 255, 0.75);
+  --muted-2: rgba(255, 255, 255, 0.6);
+  --link: rgba(255, 255, 255, 0.88);
+  --accent-red: #e53935;
+  --accent-red-dark: #c12b26;
+  --max-width: 1200px;
+  --gap: 36px;
+  --radius: 10px;
+  --footer-padding: 48px;
+}
+
+/* Reset básico para footer */
+.footer {
+  background: linear-gradient(90deg, #062a78, #0b74ff);
+  color: #ffffff;
+  padding: var(--footer-padding) 20px 24px;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.45;
+  box-sizing: border-box;
+}
+
+/* contenedor central */
+.footer-top {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  gap: var(--gap);
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* columnas */
+.footer-column {
+  flex: 1 1 0;
+  min-width: 180px;
+}
+
+/* columna logo (más ancha) */
+.footer-top .footer-column:first-child {
+  flex: 1.6 1 0;
+  min-width: 220px;
+}
+
+/* Tipografía logo y subtítulo */
+.footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  letter-spacing: 0.6px;
+}
+
+.footer-subtitle {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* texto de descripción */
+.footer-text {
+  margin: 0 0 14px 0;
+  color: var(--muted-2);
+  font-size: 14px;
+  max-width: 360px;
+}
+
+/* redes sociales */
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background .18s ease, transform .12s ease;
+  outline: none;
+}
+
+.footer-socials a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* focus visible para accesibilidad */
+.footer-socials a:focus-visible,
+.footer-column a:focus-visible,
+.footer-emergency a:focus-visible,
+.footer-links a:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.14);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* títulos de columnas */
+.footer-column h3 {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* listas */
+.footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column li {
+  margin: 8px 0;
+}
+
+.footer-column a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .15s ease, transform .12s ease;
+}
+
+.footer-column a:hover {
+  color: var(--link);
+  transform: translateX(4px);
+}
+
+/* contacto y emergencias */
+.footer-emergency {
+  margin-top: 12px;
+}
+
+.footer-emergency a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: var(--accent-red);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(197, 44, 44, 0.12);
+  transition: background .12s ease, transform .08s ease;
+}
+
+.footer-emergency a:active {
+  transform: translateY(1px);
+}
+
+.footer-emergency a:hover {
+  background: var(--accent-red-dark);
+}
+
+/* Bottom row */
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 18px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 0 10px 0;
+  color: var(--muted-2);
+  font-size: 13px;
+}
+
+/* bottom links */
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: var(--muted-2);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Responsiveness */
+
+/* Tablets / pantallas medianas */
+@media (max-width: 992px) {
+  .footer-top {
+    gap: 26px;
+  }
+
+  .footer-text {
+    max-width: 320px;
+  }
+
+  .footer-column h3 {
+    font-size: 14px;
+  }
+}
+
+/* Móviles: apilar columnas */
+@media (max-width: 768px) {
+  .footer {
+    padding: 32px 18px 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding-bottom: 18px;
+  }
+
+  .footer-top .footer-column:first-child {
+    order: 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+/* Ajustes finos para iPhones pequeños (iPhone SE 375) y similares */
+@media (max-width: 420px) {
+  :root {
+    --gap: 20px;
+    --footer-padding: 28px;
+  }
+
+  .footer-logo {
+    font-size: 18px;
+  }
+
+  .footer-subtitle {
+    font-size: 12px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .footer-socials a {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .footer-emergency a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Extra pequeño para 375x667 aún más compacto */
+@media (max-width: 380px) {
+  .footer-column {
+    min-width: 0;
+  }
+
+  .footer-text {
+    display: block;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}

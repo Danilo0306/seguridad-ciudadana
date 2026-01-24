@@ -1,0 +1,188 @@
+/* ========================================= */
+/* ESTILOS GLOBALES DEL COMPONENTE Y MODOS */
+/* ========================================= */
+
+.mis-alertas {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Modo Claro (Light Mode) */
+.mis-alertas.light {
+    background-color: #ffffff; /* Fondo claro */
+    color: #333333; /* Texto oscuro */
+}
+
+/* Modo Oscuro (Dark Mode) */
+.mis-alertas.dark {
+    background-color: #2c3e50; /* Fondo oscuro (azul marino) */
+    color: #ecf0f1; /* Texto claro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.mis-alertas h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-bottom: 2px solid #3498db; /* Línea de color primario */
+    padding-bottom: 10px;
+}
+.mis-alertas.dark h3 {
+    border-bottom: 2px solid #2ecc71; /* Verde esmeralda en modo oscuro */
+}
+
+/* ========================================= */
+/* ESTILOS DEL FILTRO DE ESCALA */
+/* ========================================= */
+
+.filtros-alerta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.filtros-alerta label {
+    white-space: nowrap; /* Evita que el texto de la etiqueta se rompa */
+}
+
+.filtros-alerta select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #bdc3c7;
+    background-color: #ecf0f1;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 150px; /* Ancho mínimo para que se vea bien */
+}
+
+.mis-alertas.dark .filtros-alerta select {
+    background-color: #34495e; /* Fondo oscuro */
+    color: #ecf0f1;
+    border-color: #2c3e50;
+}
+
+.filtros-alerta select:hover,
+.filtros-alerta select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+/* ========================================= */
+/* ESTILOS DE LA TABLA Y RESPONSIVE */
+/* ========================================= */
+
+.table-wrapper {
+    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+    border-radius: 8px;
+    border: 1px solid #dcdcdc; /* Borde sutil */
+}
+
+.mis-alertas.dark .table-wrapper {
+    border: 1px solid #34495e;
+}
+
+.tabla-alertas {
+    width: 100%;
+    border-collapse: collapse; /* Bordes de celdas unidos */
+    min-width: 700px; /* Asegura que la tabla no se colapse demasiado */
+}
+
+.tabla-alertas th,
+.tabla-alertas td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0; /* Separador de filas */
+    font-size: 0.95rem;
+}
+
+/* Encabezado (Header) */
+.tabla-alertas thead th {
+    background-color: #3498db; /* Azul primario */
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.mis-alertas.dark .tabla-alertas thead th {
+    background-color: #13ca60; /* Verde esmeralda */
+    color: #2c3e50;
+}
+
+/* Filas (Body) */
+.tabla-alertas tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.tabla-alertas tbody tr:hover {
+    /* Efecto hover suave */
+    background-color: rgba(52, 152, 219, 0.1);
+}
+.mis-alertas.dark .tabla-alertas tbody tr:hover {
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+/* ========================================= */
+/* ESTILOS POR ESCALA (Colorear filas) */
+/* ========================================= */
+
+/* Rojo Suave (Escala 3 - Alto) */
+.tabla-alertas .rojo {
+    background-color: #fcebeb; /* Rojo muy claro (Ya estaba suave) */
+    font-weight: 600;
+}
+.mis-alertas.dark .tabla-alertas .rojo {
+    background-color: rgba(231, 76, 60, 0.2);
+}
+
+/* Naranja Suave (Escala 2 - Medio) */
+.tabla-alertas .naranja {
+    background-color: #fff4e6; /* Naranja muy claro (Ya estaba suave) */
+}
+.mis-alertas.dark .tabla-alertas .naranja {
+    background-color: rgba(243, 156, 18, 0.2);
+}
+
+/* Verde Suave (Escala 1 - Bajo) */
+.tabla-alertas .verde {
+    background-color: #e6ffe6; /* 🟢 Verde muy claro (Suavizado) */
+    /* El texto debe ser oscuro para contrastar con el fondo claro */
+    color: #333333; 
+}
+.mis-alertas.dark .tabla-alertas .verde {
+    background-color: rgba(46, 204, 113, 0.2); /* Verde semi-transparente para Modo Oscuro */
+    color: #ecf0f1; 
+}
+
+/* Color de texto dentro de las filas de color para mejor contraste */
+
+/* Para todas las filas claras (Rojo, Naranja, Verde en modo claro), usamos texto oscuro. */
+.tabla-alertas .rojo td,
+.tabla-alertas .naranja td,
+.tabla-alertas .verde td {
+    color: #333333; /* Texto oscuro para fondos claros */
+}
+
+/* Asegura la legibilidad en modo oscuro */
+.mis-alertas.dark .tabla-alertas .rojo td,
+.mis-alertas.dark .tabla-alertas .naranja td,
+.mis-alertas.dark .tabla-alertas .verde td {
+    /* En modo oscuro, el texto debe ser claro (ecf0f1) */
+    color: #ecf0f1; 
+}
+
+/* Resto de estilos... */
+.mis-alertas > p {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+    color: #95a5a6;
+}

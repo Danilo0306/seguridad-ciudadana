@@ -1,0 +1,49 @@
+/* --- Dropdown de Estado (solo Gestión) --- */
+.gestion-estado-cell { position: relative; padding: 12px 8px; }
+
+.gestion-estado-badge {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gestion-estado-button { box-shadow: 0 0 0 1px rgba(0,0,0,0.04) inset; }
+.gestion-chevron { font-size: 12px; opacity: 0.8; }
+
+.gestion-estado-resuelto { background: #e6fff0; color: #008a3c; }
+.gestion-estado-pendiente { background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb; }
+.gestion-estado-proceso { background: #e8f0ff; color: #1e55d4; }
+
+.gestion-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 8px;
+  min-width: 110px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 6px;
+  z-index: 50;
+}
+
+.gestion-dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #111827;
+}
+
+.gestion-dropdown-item:hover { background: rgba(0,0,0,0.03); }
+.gestion-dropdown-item.selected { background: rgba(0,128,64,0.06); }
+.gestion-check { font-weight: 700; color: #0b6b2b; }

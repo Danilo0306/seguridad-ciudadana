@@ -1,0 +1,120 @@
+/* ------------------------------------------------------------------- */
+/* ------------------- ESTILOS GENERALES DE LA PÁGINA ------------------- */
+/* ------------------------------------------------------------------- */
+
+.prevencion-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.prevencion-page h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.prevencion-page .subtitle {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* ------------------------------------------------------------------- */
+/* ------------------- ESTILOS DE CATEGORÍA Y GRID ---------------------- */
+/* ------------------------------------------------------------------- */
+
+.category-group {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    color: #3498db; /* Azul institucional */
+    border-left: 5px solid #3498db;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.prevencion-grid {
+    display: grid;
+    /* Diseña un layout flexible de 2 o 3 columnas */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* ------------------------------------------------------------------- */
+/* ------------------- ESTILOS DE LA TARJETA INDIVIDUAL ----------------- */
+/* ------------------------------------------------------------------- */
+
+.prevencion-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #eee;
+    position: relative;
+}
+
+.prevencion-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.prevencion-card .icon {
+    font-size: 1.8rem;
+    margin-right: 15px;
+    line-height: 1;
+}
+
+.prevencion-card h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 600;
+}
+
+.prevencion-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* ------------------- INDICADORES DE RIESGO ------------------- */
+
+/* Indicador visual de nivel de riesgo (Alto, Medio, Bajo) */
+.prevencion-card::before {
+    content: attr(data-level);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #bdc3c7; /* Gris por defecto */
+    color: white;
+    padding: 4px 12px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Estilos específicos basados en el nivel (Level 3 = Alto) */
+.prevencion-card.level-3::before {
+    background: #e74c3c; /* Rojo: Alto Riesgo/Prioridad */
+}
+.prevencion-card.level-2::before {
+    background: #f39c12; /* Naranja: Medio Riesgo */
+}
+.prevencion-card.level-1::before {
+    background: #2ecc71; /* Verde: Bajo Riesgo/Recomendación General */
+}

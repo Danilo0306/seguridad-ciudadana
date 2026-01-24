@@ -1,0 +1,239 @@
+/* styleAside.css */
+.aside-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.15);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Encabezado */
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #0b3d91;
+    color: white;
+}
+
+.map-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.live-badge {
+    background: #ef4444;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Mapa */
+.aside-map {
+    height: 280px;
+    position: relative;
+    background-color: #e0f2fe;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+    overflow: hidden;
+}
+
+/* Calles 1*/
+.street {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.street.horizontal {
+    height: 8px;
+}
+
+.street.vertical {
+    width: 8px;
+}
+
+/* Puntos del mapa */
+.map-point {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.point-icon {
+    font-size: 16px;
+    z-index: 2;
+}
+
+.pulse-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    z-index: 1;
+}
+
+.incidente-activo .pulse-effect {
+    background: rgba(239, 68, 68, 0.4);
+}
+
+.alerta .pulse-effect {
+    background: rgba(245, 158, 11, 0.4);
+}
+
+.patrulla .pulse-effect {
+    background: rgba(59, 130, 246, 0.4);
+}
+
+.zona-segura .pulse-effect {
+    background: rgba(16, 185, 129, 0.4);
+}
+
+/* Plaza y avenida */
+.plaza-central,
+.avenida-principal {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+}
+
+.plaza-central {
+    border-left: 3px solid #10b981;
+}
+
+.avenida-principal {
+    border-left: 3px solid #3b82f6;
+}
+
+/* Leyenda */
+.leyenda-container {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.leyenda-container h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.leyenda-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #4b5563;
+}
+
+.leyenda-color {
+    font-size: 14px;
+}
+
+/* Reportes */
+.reportes-container {
+    padding: 12px 16px;
+}
+
+.reportes-container h3 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.reporte-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    background: #f9fafb;
+    border-left: 3px solid #3b82f6;
+}
+
+.reporte-item.activo {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+}
+
+.reporte-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.reporte-tipo {
+    font-size: 13px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.reporte-ubicacion {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.reporte-tiempo {
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.8);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .aside-container {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .leyenda-items {
+        gap: 8px;
+    }
+
+    .reporte-content {
+        flex-direction: column;
+    }
+}

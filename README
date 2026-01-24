@@ -1,0 +1,151 @@
+#BACKEND
+
+#CONFIGURAR LA CONEXIÓN A LA BD:
+-Ingresar a la carpeta settings.py y modificar "DATABASES" con los datos de tu base de datos en POSTGRESQL
+
+1. **🛡️Crear BD en PostgreSQL**
+```
+ BDSEGURIDAD
+```
+2. **⚡Instalar dependencias**
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. **Ejecutar migraciones a la BD y crear superusuario**
+   ```
+   py manage.py makemigrations 
+   py manage.py migrate
+   py manage.py createsuperuser 
+   ```
+
+4. **Ejecutar el servidor**
+``` 
+py manage.py runserver
+```
+
+5. **Diseño del Login**
+Primero entra cd fronted y instalar estas dependencias 
+
+   npm install bootstrap
+   npm install daisyui
+   npm install --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons 
+   npm install react-tsparticles
+   npm i exceljs file-saver
+
+6. **Dashboard del Usuario**
+
+Instalar estas dependencias para el mapa y iconos 
+   npm install react-icons
+   npm install react-leaflet leaflet
+   npm install leaflet leaflet-routing-machine react-leaflet
+   npm i leaflet.heat
+
+7. **==========🌳TRABAJAR POR RAMAS(Git Bash)===============**
+```
+1️⃣Para vesualizar las ramas existentes 
+   git branch -a  
+
+2️⃣Para seleccionar la rama en la que quieres trabajar 
+   git checkout nombre-rama
+
+3️⃣Descarga cambios de un repositorio remoto (Pull)
+   git pull origin nombre-rama
+
+4️⃣Comentar cambios realizados (COMMIT)
+   git commit -m "comentario"
+
+5️⃣Subir tus cambios locales (Push)
+   git push -u origin nombre-rama
+```
+
+8. **==========📘 Guía: Traer main a la rama ===============**
+```
+# 1. Estás en tu rama de trabajo
+git checkout r_NombreRama
+
+# 2. Descarga los cambios más recientes del remoto
+git fetch origin
+
+# 3. Combina los últimos cambios del main en tu rama
+git merge origin/main
+
+# 4. Si hay conflictos, resuélvelos:
+#    (a) Abre los archivos en conflicto y elige qué conservar
+#    (b) Luego:
+git add .
+git commit
+
+# 5. Finalmente, sube tu rama actualizada
+git push origin r_NombreRama
+```
+
+9. **==========📘 Guía: Traer cambios de la rama al main ===============**
+```
+# 1. Ve a tu rama principal
+git checkout main
+
+# 2. Asegúrate de tener todo actualizado
+git fetch origin
+
+# 3. Actualiza tu rama main con lo más reciente del remoto
+git pull origin main
+
+# 4. Trae los cambios de la rama r_nombrerama
+git merge origin/r_NombreRama
+
+# 5. Si hay conflictos, resuélvelos, luego:
+git add .
+git commit
+```
+10. **======== PDF y EXCEL =============**
+  npm install jspdf jspdf-autotable xlsx 
+
+```
+```
+**=================================== APLICACIÓN MOBILE ======================================**
+
+#Dependencias de expo para la creación de la carpeta mobile 
+cd mobile
+npm install -g expo-cli
+
+#Instalar dependencias de React Native 
+cd mobile
+npm install react-native-web react-dom
+npx expo install @react-navigation/native @react-navigation/native-stack
+npx expo install react-native-screens react-native-safe-area-context
+npm install axios
+
+#Runnear la aplicación
+npx expo start
+ 
+#Iniciar el backend de esta manera: 
+py manage.py runserver 0.0.0.0:8000
+-----ingresar la letra "a" para abrir el emulador con expo---------
+a
+#Cambio de IPs
+Para ver tu IP abre tu cmd y pon ipconfig IPv4 
+Se debe cambiar las rutas en la carpeta services- mobile (api.js y auth.js y tambien en editarperfil.jsx) a tu ip local "IMPORTANTE"
+
+#Para el gif
+npm i lottie-react-native
+
+---Dependencias ---
+npm install victory-native react-native-svg
+mapa 
+npm install react-native-maps
+npm install react-native-reanimated
+npm install react-native-chart-kit
+npm install react-native-chart-kit react-native-svg
+npx expo install react-native-svg
+npm install react-native-xlsx
+npx expo install expo-location expo-image-picker - ubicacion
+npx expo install react-native-maps - mapa
+
+#Dependencias para el mapa de alertas: 
+expo install react-native-maps
+npm install react-native-heatmap
+
+
+
+```

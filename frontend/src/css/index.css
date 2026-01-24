@@ -1,0 +1,355 @@
+/* ================================
+   RESET
+================================ */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+}
+
+/* ================================
+   FONDO GENERAL
+================================ */
+.login-background {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ================================
+   CARD PRINCIPAL
+================================ */
+.login-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  width: 880px;
+  max-width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ================================
+   HERO (IZQUIERDA - IMAGEN/LOGO)
+================================ */
+.card-hero {
+  flex: 1;
+  min-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* transparente */
+  padding: 20px;
+}
+.hero-img {
+  width: 100%;              /* ocupa todo el ancho disponible */
+  max-width: 500px;         /* antes estaba en 900px, ahora lo hacemos más grande pero controlado */
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  transform: scale(1.1);    /* efecto para agrandarla un poco más */
+}
+
+
+/* ================================
+   FORM (DERECHA)
+================================ */
+.card-form {
+  flex: 1.5;
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Logo circular opcional */
+.logo-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px auto;
+  background: #1f3a60;
+}
+.icon-user {
+  font-size: 36px;
+  color: white;
+}
+
+/* ================================
+   TABS (Iniciar sesión | Regístrate)
+================================ */
+.tab-header {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #e9ecef;
+  color: #1b263b;
+}
+.tab-btn:hover {
+  background: #415a77;
+  color: #fff;
+}
+.tab-btn.active {
+  background: linear-gradient(135deg, #1b263b, #415a77);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(65, 90, 119, 0.3);
+}
+
+/* ================================
+   INPUTS
+================================ */
+.input-group {
+  margin-bottom: 16px;
+}
+.input-group label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f3a60;
+}
+.input-row {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+}
+.input-row input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  background: transparent;
+  padding: 6px 8px;
+}
+.icon-box {
+  color: #2c5282;
+  font-size: 18px;
+}
+.eye-icon {
+  cursor: pointer;
+  color: #4ea8de;
+}
+
+/* ================================
+   BOTONES
+================================ */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 12px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+.login-btn {
+  background: linear-gradient(135deg, #1b263b, #415a77);
+  color: white;
+  box-shadow: 0 6px 16px rgba(65, 90, 119, 0.4);
+}
+.login-btn:hover {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  transform: translateY(-2px);
+}
+.register-btn {
+  background: linear-gradient(135deg, #778da9, #415a77);
+  color: white;
+  box-shadow: 0 6px 16px rgba(119,141,169,0.4);
+}
+.register-btn:hover {
+  background: linear-gradient(135deg, #415a77, #1b263b);
+  transform: translateY(-2px);
+}
+.reset-btn {
+  background-color: #718096;
+  color: white;
+}
+
+/* ================================
+   OPCIONES PEQUEÑAS
+================================ */
+.small-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin: 10px 0 16px;
+}
+.link-btn {
+  background: none;
+  border: none;
+  color: #2c5282;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ================================
+   ERROR
+================================ */
+.login-error {
+  color: #d9534f;
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 880px) {
+  .login-card {
+    flex-direction: column;
+    width: 100%;
+  }
+  .card-hero {
+    min-height: 180px;
+    width: 100%;
+  }
+  .card-form {
+    padding: 22px;
+  }
+}
+
+/* Animación fade + zoom */
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Aplicamos a la imagen */
+.hero-img {
+  width: 100%;
+  max-width: 420px; /* más grande */
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  animation: fadeZoomIn 1s ease-out; /* animación al cargar */
+}
+@keyframes shieldBounce {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  80% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 420px;
+  animation: shieldBounce 1s ease-out;
+}
+/* Animación principal: aparece con zoom */
+@keyframes shieldReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-15deg);
+    filter: drop-shadow(0 0 0px rgba(0, 150, 255, 0));
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.6));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 10px rgba(0, 150, 255, 0.8));
+  }
+}
+
+/* Efecto resplandor continuo */
+@keyframes shieldGlow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(0, 150, 255, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(0, 150, 255, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(0, 150, 255, 0.5));
+  }
+}
+/* index.css o App.css */
+.leaflet-container {
+  width: 100%;
+  height: 400px; /* ajusta el tamaño que necesites */
+}
+/* ================================
+   NUEVAS MODIFICACIONES PARA RESPONSIVE
+================================ */
+/* Cuando la pantalla es menor a 1200px*/
+@media (max-width: 1200px) {
+  .card-hero {
+    min-width: 350px;
+  }
+}
+
+/* Cuando la pantalla es menor a 992px*/
+@media (max-width: 992px) {
+  .card-hero {
+    min-width: 300px;
+  }
+}
+
+/* Cuando la pantalla es menor a 576px*/
+@media (max-width: 576px) {
+  .hero-img {
+    width: 100%;
+    max-width: 270px;
+    animation: shieldBounce 1s ease-out;
+    display: block;
+    margin: 0 auto; 
+  }
+  .card-hero {
+    min-width: auto;
+    min-height: 150px;
+    padding: 0px;
+  }
+}
+
+/* Cuando la pantalla es 375x667 px (como en tu dispositivo móvil) */
+@media (max-width: 375px) {
+  .hero-img {
+    width: 100%;
+    max-width: 90px;
+    animation: shieldBounce 1s ease-out;
+    display: block;
+    margin: 0 auto; 
+  }
+  .card-hero {
+    min-width: auto;
+    min-height: 90px;
+    padding: 0px;
+  }
+}

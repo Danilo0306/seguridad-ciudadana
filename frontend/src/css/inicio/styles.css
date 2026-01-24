@@ -1,0 +1,291 @@
+:root {
+    --bg: #f7fbff;
+    --primary: #000000;
+    --accent: #2196f3;
+    --danger: #e53935;
+    --success: #2e7d32;
+    --muted: #666;
+    --card: #fff;
+    --max-w: 1200px;
+    font-family: Inter, Arial, sans-serif;
+
+
+}
+
+/* Reset minimal */
+* {
+    box-sizing: border-box
+}
+
+html,
+body,
+#root {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #111;
+    line-height: 1.5
+}
+
+/* Header */
+.site-header {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: #fff;
+    padding: 48px 20px 36px
+}
+
+.header-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    text-align: center
+}
+
+.title {
+    margin: 0;
+    font-size: 38px;
+    letter-spacing: 0.6px
+}
+
+.subtitle {
+    margin: 12px auto 0;
+    max-width: 900px;
+    color: rgba(255, 255, 255, 0.95)
+}
+
+.header-ctas {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff
+}
+
+.btn-light {
+    background: #fff;
+    color: var(--primary);
+    border: 1px solid rgba(255, 255, 255, 0.12)
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: #fff
+}
+
+.btn-success {
+    background: var(--success);
+    color: #fff
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--primary)
+}
+
+/* Main layout */
+.container {
+    max-width: var(--max-w);
+    margin: -28px auto 36px;
+    padding: 20px
+}
+
+.top-section {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start
+}
+
+.left {
+    flex: 1
+}
+
+.right {
+    width: 460px
+}
+
+.lead {
+    font-size: 16px;
+    color: #222
+}
+
+.action-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap
+}
+
+.muted {
+    color: var(--muted);
+    margin-top: 12px
+}
+
+/* Map card */
+.map-card {
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(12, 40, 80, 0.06)
+}
+
+.map-canvas {
+    height: 300px;
+    background: linear-gradient(180deg, #e3f2fd, #bbdefb);
+    position: relative;
+    padding: 12px
+}
+
+.map-canvas .map-label {
+    position: absolute;
+    left: 12px;
+    bottom: 10px;
+    color: var(--primary);
+    font-weight: 700
+}
+
+.pin {
+    position: absolute;
+    padding: 6px 8px;
+    border-radius: 16px;
+    color: #fff;
+    font-size: 12px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12)
+}
+
+.pin-critico,
+.pin-critico {
+    background: #b71c1c
+}
+
+/* ejemplo */
+.pin-alto {
+    background: #e53935
+}
+
+.pin-medio {
+    background: #ff9800
+}
+
+.pin-bajo {
+    background: #4caf50
+}
+
+/* info below map */
+.map-info {
+    padding: 12px
+}
+
+/* features */
+.features-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 14px
+}
+
+.feature {
+    flex: 1 1 220px;
+    background: var(--card);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.04)
+}
+
+/* promo */
+.promo {
+    margin-top: 28px;
+    background: linear-gradient(90deg, #fff, #f3f8ff);
+    padding: 20px;
+    border-radius: 12px
+}
+
+.promo-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.promo-ctas {
+    display: flex;
+    gap: 10px
+}
+
+/* testimonials */
+.testimonials {
+    margin-top: 28px
+}
+
+.cards {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap
+}
+
+.card {
+    flex: 1 1 300px;
+    background: var(--card);
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.04)
+}
+
+/* footer */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--muted);
+    font-size: 13px;
+    background: transparent
+}
+
+/* responsive: mobile first */
+@media (max-width:1000px) {
+    .top-section {
+        flex-direction: column
+    }
+
+    .right {
+        width: 100%
+    }
+
+    .header-inner {
+        padding: 0 12px
+    }
+}
+
+/* 1080p specific tweaks (wide screens) */
+@media (min-width:1400px) {
+    .title {
+        font-size: 48px
+    }
+
+    .map-canvas {
+        height: 360px
+    }
+
+    .header-inner {
+        padding: 0 40px
+    }
+}
